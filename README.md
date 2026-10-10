@@ -1,9 +1,9 @@
-# 🧭 novz-compass
+# 🧭 novZ_compass
 
 [![FiveM](https://img.shields.io/badge/FiveM-FXServer-orange.svg?style=flat-square)](https://fivem.net/)
 [![Lua](https://img.shields.io/badge/Lua-5.4-blue.svg?style=flat-square)](https://www.lua.org/)
-[![Framework](https://img.shields.io/badge/Framework-Standalone-success.svg?style=flat-square)](https://github.com/nov4z/novz-compass)
-[![Resmon](https://img.shields.io/badge/Resmon-0.00ms-brightgreen.svg?style=flat-square)](https://github.com/nov4z/novz-compass)
+[![Tested](https://img.shields.io/badge/Tested%20On-ESX%20Legacy-blue.svg?style=flat-square)](https://github.com/nov4z/novZ_compass)
+[![Resmon](https://img.shields.io/badge/Resmon-0.00ms-brightgreen.svg?style=flat-square)](https://github.com/nov4z/novZ_compass)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
 Un HUD de **Puntos Cardinales y Brújula** ligero, moderno, altamente optimizado (0.00ms resmon) y personalizable para servidores de **FiveM**.
@@ -14,33 +14,45 @@ Un HUD de **Puntos Cardinales y Brújula** ligero, moderno, altamente optimizado
 
 ## 🇪🇸 Descripción en Español
 
-**`novz-compass`** muestra en pantalla la orientación cardinal hacia donde mira la cámara del jugador (Norte, Sur, Este, Oeste y rumbos intermedios), con soporte opcional para **nombres de calles**, **grados angulares** y diferentes estilos visuales.
+**`novZ_compass`** muestra en pantalla la orientación cardinal hacia donde mira la cámara del jugador (Norte, Sur, Este, Oeste y rumbos intermedios), con soporte opcional para nombres de calles, grados angulares y diferentes estilos visuales.
 
-Es **100% Standalone**, lo que significa que funciona sin necesidad de frameworks, pero es totalmente compatible con **ESX**, **QBCore**, **Qbox**, **vRP** o cualquier servidor personalizado.
+> [!IMPORTANT]
+> **Compatibilidad de Frameworks:**
+> - **Testeado y funcional en:** ESX Legacy.
+> - **NO testeado:** Versión actual / más reciente de ESX.
+> - **NO testeado:** QBCore ni Qbox.
+> 
+> *(Si alguien lo prueba en la versión actual de ESX, QBCore o Qbox, cualquier reporte o pull request es totalmente bienvenido).*
 
-### ✨ Características
-- ⚡ **Rendimiento Impecable (0.00ms en reposo):** Hilo de cálculo desacoplado y suspensión automática en el menú de pausa.
-- 🗺️ **Soporte de Calles y Cruces:** Muestra el nombre de la calle actual y la intersección.
-- 🎨 **Estilos Visuales Configurables:** Clásico (`- | - - - N - - - | -`), Minimalista (`[ N ]`), Barra (`--- N ---`) o con Grados (`N 180°`).
-- ⌨️ **Tecla y Comando Registrados:** Comando `/compass` y asignación de tecla nativa (`K` por defecto) personalizable por cada jugador en *Ajustes de GTA > Asignación de Teclas > FiveM*.
-- 🌐 **Soporte Bilingüe:** Español (`N, S, E, O`) e Inglés (`N, S, E, W`) seleccionable en `config.lua`.
-- 🧩 **Exportaciones Públicas:** Permite a otros scripts activar, desactivar o consultar la orientación del jugador.
+### Características
+- **Rendimiento optimizado (0.00ms en reposo):** Hilo de cálculo desacoplado y suspensión automática en el menú de pausa.
+- **Soporte de calles y cruces:** Muestra el nombre de la vía actual e intersecciones.
+- **Estilos configurables:** Clásico (`- | - - - N - - - | -`), Minimalista (`[ N ]`), Barra (`--- N ---`) o con Grados (`N 180°`).
+- **Comando y tecla registrados:** Comando `/compass` y asignación de tecla nativa (`K` por defecto) reasignable por cada jugador en los ajustes de GTA V.
+- **Soporte bilingüe:** Español (`N, S, E, O`) e Inglés (`N, S, E, W`) seleccionable en `config.lua`.
+- **Exportaciones públicas:** Permite a otros scripts activar, desactivar o consultar la orientación del jugador.
 
 ---
 
 ## 🇺🇸 English Description
 
-**`novz-compass`** displays on-screen the cardinal orientation the player's camera is facing (North, South, East, West and intermediate bearings), with optional support for **street names**, **heading degrees**, and different visual styles.
+**`novZ_compass`** displays on-screen the cardinal orientation the player's camera is facing (North, South, East, West and intermediate bearings), with optional support for street names, heading degrees, and different visual styles.
 
-It is **100% Standalone**, meaning it works without requiring any framework, yet it is fully compatible with **ESX**, **QBCore**, **Qbox**, **vRP**, or any custom server setup.
+> [!IMPORTANT]
+> **Framework Compatibility:**
+> - **Tested and working on:** ESX Legacy.
+> - **NOT tested:** Current / latest ESX version.
+> - **NOT tested:** QBCore or Qbox.
+> 
+> *(If anyone tests this on current ESX, QBCore, or Qbox, feedback and pull requests are warmly welcome).*
 
-### ✨ Features
-- ⚡ **Zero Performance Impact (0.00ms idle):** Decoupled calculation loop and automatic sleep when the pause menu is open.
-- 🗺️ **Street & Intersection Names:** Displays the current street and crossing road.
-- 🎨 **Configurable Visual Styles:** Classic (`- | - - - N - - - | -`), Minimalist (`[ N ]`), Bar (`--- N ---`), or with Degrees (`N 180°`).
-- ⌨️ **Native Keymapping & Command:** `/compass` command and native keybind (`K` by default) customizable in *GTA Settings > Key Bindings > FiveM*.
-- 🌐 **Bilingual Support:** Spanish (`N, S, E, O`) and English (`N, S, E, W`) selectable in `config.lua`.
-- 🧩 **Public Exports:** Allows other resources to toggle, check, or retrieve compass data.
+### Features
+- **Zero performance impact (0.00ms idle):** Decoupled calculation loop and automatic sleep when the pause menu is open.
+- **Street & intersection names:** Displays current road and crossing intersection.
+- **Configurable styles:** Classic (`- | - - - N - - - | -`), Minimalist (`[ N ]`), Bar (`--- N ---`), or with Degrees (`N 180°`).
+- **Command & keybind:** `/compass` command and native keybind (`K` by default) rebindable in GTA V settings.
+- **Bilingual support:** Spanish (`N, S, E, O`) and English (`N, S, E, W`) selectable in `config.lua`.
+- **Public exports:** Allows other resources to toggle, check, or retrieve compass data.
 
 ---
 
@@ -57,17 +69,17 @@ It is **100% Standalone**, meaning it works without requiring any framework, yet
 1. Descarga o clona este repositorio en tu carpeta de recursos:
    ```bash
    cd resources/[standalone]
-   git clone https://github.com/nov4z/Cardinal-Points-for-FiveM.git novz-compass
+   git clone https://github.com/nov4z/novZ_compass.git
    ```
-2. Asegúrate de que la carpeta se llame `novz-compass` (o el nombre de tu preferencia).
+2. Asegúrate de que la carpeta se llame `novZ_compass`.
 3. Añade la siguiente línea a tu archivo `server.cfg`:
    ```cfg
-   ensure novz-compass
+   ensure novZ_compass
    ```
 4. Reinicia tu servidor o ejecuta en la consola:
    ```
    refresh
-   start novz-compass
+   start novZ_compass
    ```
 
 ---
@@ -101,20 +113,20 @@ Puedes interactuar con el compás desde otros scripts cliente:
 
 ```lua
 -- Alternar estado (toggle)
-exports['novz-compass']:ToggleCompass()
+exports['novZ_compass']:ToggleCompass()
 
 -- Forzar activación o desactivación
-exports['novz-compass']:ToggleCompass(true)  -- Activar
-exports['novz-compass']:ToggleCompass(false) -- Desactivar
+exports['novZ_compass']:ToggleCompass(true)  -- Activar
+exports['novZ_compass']:ToggleCompass(false) -- Desactivar
 
 -- Comprobar si está activo
-local activo = exports['novz-compass']:IsCompassActive()
+local activo = exports['novZ_compass']:IsCompassActive()
 
 -- Obtener la dirección cardinal actual (ej: "N", "SO", etc.)
-local direccion = exports['novz-compass']:GetCardinalDirection()
+local direccion = exports['novZ_compass']:GetCardinalDirection()
 
 -- Obtener los grados actuales (0 - 359)
-local grados = exports['novz-compass']:GetHeadingDegrees()
+local grados = exports['novZ_compass']:GetHeadingDegrees()
 ```
 
 ---

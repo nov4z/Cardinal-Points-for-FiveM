@@ -1,8 +1,14 @@
 -- ====================================================================
 -- CONFIGURACIÓN PRINCIPAL / MAIN CONFIGURATION
 -- ====================================================================
--- Todas las opciones de personalización del HUD se configuran aquí.
--- No es necesario modificar el código en client/main.lua.
+-- Recurso: novZ_compass
+-- Autor: NovZ
+-- Repositorio: https://github.com/nov4z/novZ_compass
+-- ====================================================================
+-- COMPATIBILIDAD / COMPATIBILITY:
+--   - Testeado y funcional en: ESX Legacy
+--   - NO testeado: Versión actual / más reciente de ESX
+--   - NO testeado: QBCore ni Qbox
 -- ====================================================================
 
 Config = {}

@@ -18,11 +18,11 @@ lua54 'yes'
 -- ====================================================================
 -- METADATOS DEL RECURSO / INFORMACIÓN GENERAL
 -- ====================================================================
-name 'novz-compass'
+name 'novZ_compass'
 author 'NovZ'
-description 'HUD de Puntos Cardinales y Brújula ligero, moderno y optimizado para FiveM'
+description 'HUD de Puntos Cardinales y Brújula para FiveM (Testeado en ESX Legacy)'
 version '2.0.0'
-repository 'https://github.com/nov4z/Cardinal-Points-for-FiveM'
+repository 'https://github.com/nov4z/novZ_compass'
 
 -- ====================================================================
 -- CARGA DE SCRIPTS

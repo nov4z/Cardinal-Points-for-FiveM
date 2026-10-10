@@ -2,7 +2,7 @@
 -- CLIENT/MAIN.LUA - LÓGICA DEL HUD DE PUNTOS CARDINALES Y COMPÁS
 -- ====================================================================
 -- Autor: NovZ
--- Repositorio: https://github.com/nov4z/Cardinal-Points-for-FiveM
+-- Repositorio: https://github.com/nov4z/novZ_compass
 -- Descripción:
 --   Este archivo contiene toda la lógica cliente para calcular hacia dónde
 --   mira el jugador, determinar la dirección cardinal (N, S, E, O, etc.),
@@ -302,8 +302,8 @@ end
 -- Otros recursos de tu servidor pueden llamar estas funciones directamente:
 --
 -- Ejemplo desde otro script Lua cliente:
---   exports['novz-compass']:ToggleCompass()
---   local direccion = exports['novz-compass']:GetCardinalDirection()
+--   exports['novZ_compass']:ToggleCompass()
+--   local direccion = exports['novZ_compass']:GetCardinalDirection()
 -- ====================================================================
 exports('ToggleCompass', ToggleCompass)
 exports('IsCompassActive', function()

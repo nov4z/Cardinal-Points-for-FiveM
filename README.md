@@ -44,10 +44,11 @@ It is **100% Standalone**, meaning it works without requiring any framework, yet
 
 ---
 
-## 📸 Vista Previa / Previews
+## 📸 Vista Previa / Preview
 
-- 🎥 **Video Preview:** [Streamable](https://streamable.com/mdukv0)
-- 🖼️ **Image Preview:** [Imgur Screenshot](https://imgur.com/0nfgaxS)
+[![Vista Previa de la Brújula](https://i.imgur.com/0nfgaxS.png)](https://imgur.com/0nfgaxS)
+
+*Captura original: [Imgur Screenshot](https://imgur.com/0nfgaxS)*
 
 ---
 

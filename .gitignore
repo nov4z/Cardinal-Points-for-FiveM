@@ -1,0 +1,19 @@
+# Archive formats
+*.rar
+*.zip
+*.7z
+*.tar.gz
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log

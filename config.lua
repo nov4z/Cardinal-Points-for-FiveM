@@ -1,123 +1,159 @@
+-- ====================================================================
+-- CONFIGURACIÓN PRINCIPAL / MAIN CONFIGURATION
+-- ====================================================================
+-- Todas las opciones de personalización del HUD se configuran aquí.
+-- No es necesario modificar el código en client/main.lua.
+-- ====================================================================
+
 Config = {}
 
 -- ====================================================================
--- IDIOMA / LANGUAGE
+-- 1. IDIOMA / LANGUAGE
 -- ====================================================================
--- 'es' = Español (N, NE, E, SE, S, SO, O, NO)
--- 'en' = English (N, NE, E, SE, S, SW, W, NW)
+-- Define los textos y las letras de los puntos cardinales.
+-- 'es' = Español  -> Norte (N), Sur (S), Este (E), Oeste (O), etc.
+-- 'en' = English  -> North (N), South (S), East (E), West (W), etc.
 Config.Locale = 'es'
 
 -- ====================================================================
--- COMPORTAMIENTO GENERAL / GENERAL BEHAVIOR
+-- 2. COMPORTAMIENTO GENERAL DEL HUD / GENERAL BEHAVIOR
 -- ====================================================================
--- Iniciar con la brújula visible por defecto / Show compass on spawn by default
+
+-- ¿Debe aparecer la brújula en pantalla automáticamente al entrar al servidor?
+-- true = Sí, visible desde el spawn.
+-- false = Oculta por defecto (el jugador debe activarla con tecla o comando).
 Config.DefaultEnabled = true
 
--- Mostrar solo cuando el jugador esté en un vehículo / Only show while inside a vehicle
+-- ¿Mostrar la brújula ÚNICAMENTE cuando el jugador está dentro de un vehículo?
+-- true  = Solo se ve conduciendo o como pasajero (estilo velocímetro/HUD vehicular).
+-- false = Se ve tanto a pie como en vehículos.
 Config.OnlyInVehicle = false
 
--- Ocultar automáticamente en el menú de pausa / Hide HUD while pause menu is active
+-- ¿Ocultar el HUD cuando el jugador abre el menú de pausa / mapa (ESC)?
+-- true  = Oculta el HUD y suspende los hilos a 0.00ms mientras el mapa está abierto.
+-- false = Sigue dibujando encima del menú de pausa.
 Config.HideInPauseMenu = true
 
--- Intervalo de cálculo en milisegundos (100ms recomendado para 0.00ms resmon)
--- Calculation tick interval in ms (100ms recommended for optimum performance)
+-- Frecuencia en milisegundos con la que se calcula el rumbo de la cámara y la calle.
+-- 100ms = 10 veces por segundo (muy fluido para la vista humana y consume 0.00ms).
+-- Reducirlo a 0ms es innecesario y malgasta CPU. Aumentarlo (ej. 200ms) ahorra aún más.
 Config.UpdateInterval = 100
 
 -- ====================================================================
--- ESTILO VISUAL DEL COMPÁS / COMPASS VISUAL STYLE
+-- 3. ESTILO VISUAL DEL COMPÁS / VISUAL STYLES
 -- ====================================================================
--- Estilos disponibles / Available styles:
--- 'classic' -> - | - - - N - - - | -
--- 'minimal' -> [ N ]
--- 'bar'     -> --- N ---
--- 'degrees' -> N (180°)
+-- Selecciona el formato visual del texto cardinal:
+-- 'classic' -> Estilo brújula táctica:  - | - - - N - - - | -
+-- 'minimal' -> Estilo limpio:          [ N ]
+-- 'bar'     -> Estilo barra simple:    --- N ---
+-- 'degrees' -> Estilo con grados:      N (180°)
 Config.Style = 'classic'
 
--- Mostrar grados de orientación (ej: 180°) / Show heading degrees (e.g. 180°)
+-- ¿Mostrar los grados numéricos de la orientación (0° a 359°)?
+-- Si está en true, añadirá el número de grados junto a la dirección (ej: "- | - - - N - - - | - 180°").
 Config.ShowDegrees = false
 
--- Mostrar nombres de calle actual y cruce / Show current street & crossing road name
+-- ¿Mostrar el nombre de la calle actual y el cruce debajo de la brújula?
+-- Ejemplo: "Innocence Blvd & Strawberry Ave"
 Config.ShowStreetNames = true
 
 -- ====================================================================
--- POSICIÓN Y APARIENCIA / POSITION & APPEARANCE
+-- 4. POSICIÓN Y COORDENADAS EN PANTALLA / SCREEN COORDINATES
 -- ====================================================================
--- Coordenadas de pantalla para el compás / Screen coordinates for compass (X: 0.0 - 1.0, Y: 0.0 - 1.0)
+-- El sistema de coordenadas 2D de GTA V va de 0.0 a 1.0:
+-- X = 0.0 (Borde izquierdo) | X = 0.5 (Centro horizontal) | X = 1.0 (Borde derecho)
+-- Y = 0.0 (Borde superior)  | Y = 0.5 (Centro vertical)   | Y = 1.0 (Borde inferior)
+
+-- Posición del compás cardinal (Por defecto: Centro superior)
 Config.Position = {
-    x = 0.5,
-    y = 0.02
+    x = 0.5,   -- Horizontal: 0.5 = Centrado
+    y = 0.02   -- Vertical: 0.02 = Justo debajo del borde superior
 }
 
--- Coordenadas de pantalla para el texto de la calle / Screen coordinates for street name
+-- Posición del texto del nombre de la calle (se dibuja un poco más abajo del compás)
 Config.StreetPosition = {
-    x = 0.5,
-    y = 0.045
+    x = 0.5,   -- Horizontal
+    y = 0.045  -- Vertical
 }
 
--- Tipografía y colores del compás / Typography & colors for compass
+-- ====================================================================
+-- 5. APARIENCIA VISUAL Y TIPOGRAFÍA / TEXT APPEARANCE
+-- ====================================================================
+-- Fuentes disponibles en GTA V:
+-- 0 = Chalet-London (Normal estándar)
+-- 1 = House Script (Cursiva)
+-- 2 = Monospace (Ancho fijo)
+-- 4 = Chalet-Comprime Cologne (HUD clásico de GTA, muy legible)
+-- 7 = Pricedown (Fuente del título de GTA)
+
+-- Configuración visual del compás cardinal
 Config.Text = {
-    Font = 4,                       -- 0: Normal, 1: Cursiva, 2: Todo mayúsculas, 4: HUD/Chalet, 7: Pricedown
-    Scale = 0.45,                   -- Tamaño del texto
-    Color = { r = 255, g = 255, b = 255, a = 240 }, -- Color RGBA (Blanco)
-    Shadow = true,                  -- Activar sombra
-    Outline = true,                 -- Activar contorno negro para mayor visibilidad
-    Centre = true                   -- Centrar texto en la coordenada X
+    Font = 4,                                         -- Fuente recomendada para HUD
+    Scale = 0.45,                                     -- Tamaño del texto (0.3 a 0.6)
+    Color = { r = 255, g = 255, b = 255, a = 240 },   -- Color RGBA: Blanco casi opaco
+    Shadow = true,                                    -- Sombra para resaltar sobre fondos claros
+    Outline = true,                                   -- Borde negro para legibilidad perfecta contra el cielo
+    Centre = true                                     -- Centrar alineación horizontal
 }
 
--- Tipografía y colores de la calle / Typography & colors for street name
+-- Configuración visual del texto de la calle
 Config.StreetText = {
-    Font = 4,
-    Scale = 0.35,
-    Color = { r = 220, g = 220, b = 220, a = 220 },
+    Font = 4,                                         -- Fuente del texto de la calle
+    Scale = 0.35,                                     -- Un poco más pequeña que el compás
+    Color = { r = 220, g = 220, b = 220, a = 220 },   -- Gris claro suave
     Shadow = true,
     Outline = true,
     Centre = true
 }
 
 -- ====================================================================
--- COMANDO Y ACCESO RÁPIDO / COMMAND & KEYBIND
+-- 6. COMANDOS Y ACCESOS RÁPIDOS / COMMANDS & KEYBINDINGS
 -- ====================================================================
--- Comando en chat para activar/desactivar (pon nil o false para deshabilitar)
--- Chat command to toggle HUD (set to nil or false to disable)
+
+-- Nombre del comando en chat para activar o desactivar la brújula.
+-- Usa nil o false si prefieres deshabilitar el comando.
 Config.Command = 'compass'
 
--- Registro nativo de tecla (los jugadores pueden cambiar la tecla en Ajustes > FiveM)
--- Native key mapping (players can rebind in GTA Settings > Key Bindings > FiveM)
+-- Registro nativo de tecla en FiveM (RegisterKeyMapping).
+-- Ventajas: No entra en conflicto con otros scripts y los jugadores pueden
+-- reasignar la tecla a su gusto desde: Ajustes del juego > Asignación de Teclas > FiveM.
 Config.KeyMapping = {
     Enabled = true,
-    DefaultKey = 'K',
-    Description = 'Alternar HUD de Puntos Cardinales'
+    DefaultKey = 'K',                                     -- Tecla por defecto
+    Description = 'Alternar visibilidad de la Brújula'   -- Texto visible en los ajustes de GTA V
 }
 
--- Mostrar notificación al alternar con comando/tecla / Show chat notification on toggle
+-- ¿Mostrar una pequeña notificación en pantalla al encender o apagar la brújula?
 Config.NotifyOnToggle = true
 
 -- ====================================================================
--- DICCIONARIO DE PUNTOS CARDINALES / CARDINAL POINTS DICTIONARY
+-- 7. TABLAS DE LOCALIZACIÓN / LOCALIZATION TABLES
 -- ====================================================================
+-- Letras asignadas a cada sector angular de 45°
 Config.Directions = {
     ['es'] = {
-        N  = "N",
-        NE = "NE",
-        E  = "E",
-        SE = "SE",
-        S  = "S",
-        SO = "SO",
-        O  = "O",
-        NO = "NO"
+        N  = "N",    -- Norte
+        NE = "NE",   -- Noreste
+        E  = "E",    -- Este
+        SE = "SE",   -- Sureste
+        S  = "S",    -- Sur
+        SO = "SO",   -- Suroeste
+        O  = "O",    -- Oeste
+        NO = "NO"    -- Noroeste
     },
     ['en'] = {
-        N  = "N",
-        NE = "NE",
-        E  = "E",
-        SE = "SE",
-        S  = "S",
-        SO = "SW",
-        O  = "W",
-        NO = "NW"
+        N  = "N",    -- North
+        NE = "NE",   -- Northeast
+        E  = "E",    -- East
+        SE = "SE",   -- Southeast
+        S  = "S",    -- South
+        SO = "SW",   -- Southwest
+        O  = "W",    -- West
+        NO = "NW"    -- Northwest
     }
 }
 
+-- Mensajes de notificación del sistema
 Config.Translations = {
     ['es'] = {
         toggled_on  = "Brújula activada.",

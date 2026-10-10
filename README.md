@@ -1,20 +1,20 @@
-# 🧭 Cardinal-Points-for-FiveM
+# 🧭 novz-compass
 
 [![FiveM](https://img.shields.io/badge/FiveM-FXServer-orange.svg?style=flat-square)](https://fivem.net/)
 [![Lua](https://img.shields.io/badge/Lua-5.4-blue.svg?style=flat-square)](https://www.lua.org/)
-[![Framework](https://img.shields.io/badge/Framework-Standalone-success.svg?style=flat-square)](https://github.com/nov4z/Cardinal-Points-for-FiveM)
-[![Resmon](https://img.shields.io/badge/Resmon-0.00ms-brightgreen.svg?style=flat-square)](https://github.com/nov4z/Cardinal-Points-for-FiveM)
+[![Framework](https://img.shields.io/badge/Framework-Standalone-success.svg?style=flat-square)](https://github.com/nov4z/novz-compass)
+[![Resmon](https://img.shields.io/badge/Resmon-0.00ms-brightgreen.svg?style=flat-square)](https://github.com/nov4z/novz-compass)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
-Un HUD de **Puntos Cardinales y Brújula** ligero, moderno, altamente optimizado y personalizable para servidores de **FiveM**.
+Un HUD de **Puntos Cardinales y Brújula** ligero, moderno, altamente optimizado (0.00ms resmon) y personalizable para servidores de **FiveM**.
 
-> A lightweight, modern, highly optimized, and customizable **Cardinal Points & Compass HUD** for **FiveM** servers.
+> A lightweight, modern, highly optimized (0.00ms resmon), and customizable **Cardinal Points & Compass HUD** for **FiveM** servers.
 
 ---
 
 ## 🇪🇸 Descripción en Español
 
-Este recurso muestra en pantalla la orientación cardinal hacia donde mira la cámara del jugador (Norte, Sur, Este, Oeste y rumbos intermedios), con soporte opcional para **nombres de calles**, **grados angulares** y diferentes estilos visuales.
+**`novz-compass`** muestra en pantalla la orientación cardinal hacia donde mira la cámara del jugador (Norte, Sur, Este, Oeste y rumbos intermedios), con soporte opcional para **nombres de calles**, **grados angulares** y diferentes estilos visuales.
 
 Es **100% Standalone**, lo que significa que funciona sin necesidad de frameworks, pero es totalmente compatible con **ESX**, **QBCore**, **Qbox**, **vRP** o cualquier servidor personalizado.
 
@@ -30,7 +30,7 @@ Es **100% Standalone**, lo que significa que funciona sin necesidad de framework
 
 ## 🇺🇸 English Description
 
-This resource displays on-screen the cardinal orientation the player's camera is facing (North, South, East, West and intermediate bearings), with optional support for **street names**, **heading degrees**, and different visual styles.
+**`novz-compass`** displays on-screen the cardinal orientation the player's camera is facing (North, South, East, West and intermediate bearings), with optional support for **street names**, **heading degrees**, and different visual styles.
 
 It is **100% Standalone**, meaning it works without requiring any framework, yet it is fully compatible with **ESX**, **QBCore**, **Qbox**, **vRP**, or any custom server setup.
 
@@ -56,17 +56,17 @@ It is **100% Standalone**, meaning it works without requiring any framework, yet
 1. Descarga o clona este repositorio en tu carpeta de recursos:
    ```bash
    cd resources/[standalone]
-   git clone https://github.com/nov4z/Cardinal-Points-for-FiveM.git
+   git clone https://github.com/nov4z/Cardinal-Points-for-FiveM.git novz-compass
    ```
-2. Asegúrate de que la carpeta se llame `Cardinal-Points-for-FiveM`.
+2. Asegúrate de que la carpeta se llame `novz-compass` (o el nombre de tu preferencia).
 3. Añade la siguiente línea a tu archivo `server.cfg`:
    ```cfg
-   ensure Cardinal-Points-for-FiveM
+   ensure novz-compass
    ```
 4. Reinicia tu servidor o ejecuta en la consola:
    ```
    refresh
-   start Cardinal-Points-for-FiveM
+   start novz-compass
    ```
 
 ---
@@ -100,20 +100,20 @@ Puedes interactuar con el compás desde otros scripts cliente:
 
 ```lua
 -- Alternar estado (toggle)
-exports['Cardinal-Points-for-FiveM']:ToggleCompass()
+exports['novz-compass']:ToggleCompass()
 
 -- Forzar activación o desactivación
-exports['Cardinal-Points-for-FiveM']:ToggleCompass(true)  -- Activar
-exports['Cardinal-Points-for-FiveM']:ToggleCompass(false) -- Desactivar
+exports['novz-compass']:ToggleCompass(true)  -- Activar
+exports['novz-compass']:ToggleCompass(false) -- Desactivar
 
 -- Comprobar si está activo
-local activo = exports['Cardinal-Points-for-FiveM']:IsCompassActive()
+local activo = exports['novz-compass']:IsCompassActive()
 
 -- Obtener la dirección cardinal actual (ej: "N", "SO", etc.)
-local direccion = exports['Cardinal-Points-for-FiveM']:GetCardinalDirection()
+local direccion = exports['novz-compass']:GetCardinalDirection()
 
 -- Obtener los grados actuales (0 - 359)
-local grados = exports['Cardinal-Points-for-FiveM']:GetHeadingDegrees()
+local grados = exports['novz-compass']:GetHeadingDegrees()
 ```
 
 ---
